@@ -1,1 +1,1 @@
-export * from './libs.js'
+export * from './libs'
