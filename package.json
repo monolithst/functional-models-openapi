@@ -1,7 +1,8 @@
 {
   "name": "functional-models-openapi",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A library for Functional models for working with Openapi.",
+  "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -12,9 +13,8 @@
     "commit": "cz",
     "feature-tests": "./node_modules/.bin/cucumber-js -p default",
     "coverage": "nyc --all --reporter=lcov npm test",
-    "build": "rm -Rf ./dist && tsc && cp package.json ./dist && cp README.md ./dist",
+    "build": "rm -Rf ./dist && tsc -p ./tsconfig.json && cp package.json ./dist && cp README.md ./dist",
     "build:watch": "nodemon -e '*' --watch ./src --exec npm run build",
-    "build:docs": "npx typedoc --out ./buildDocs ./src/index.ts",
     "prettier": "prettier --write .",
     "prettier:check": "prettier -c .",
     "eslint": "eslint . --fix",
@@ -81,7 +81,7 @@
     "sinon": "^18.0.1",
     "ts-node": "^9.1.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "5.3.3"
   },
   "dependencies": {
     "functional-models": "^3.5.0",
